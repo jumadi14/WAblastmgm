@@ -19,10 +19,12 @@ const whatsappRoutes = require('./routes/whatsappRoutes');
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { 
-    cors: {
-        origin: ["http://localhost:5173", "http://192.168.167.158:5173"], // Tambahkan IP lokal di sini
-        methods: ["GET", "POST", "PUT", "DELETE"]
-    }
+  cors: {
+        origin: [
+            "http://localhost:5173", 
+            "http://192.168.167.158:5173",
+            "https://wablastmgm.onrender.com" // Tambahkan URL Render Anda di sini
+        ], 
 });
 
 // Set Socket.IO instance di services
